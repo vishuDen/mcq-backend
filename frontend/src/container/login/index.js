@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios'
-import { Navigate } from 'react-router-dom';
-
 
 class Login extends React.Component {
 
@@ -89,7 +87,7 @@ class Login extends React.Component {
         style={{
           display: this.state.submitted ? '' : 'none',
         }}>
-        <h1>User {name} successfully registered!!</h1>
+        <h1>User {this.state.name} successfully registered!!</h1>
       </div>
     );
   };
