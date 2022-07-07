@@ -1,18 +1,23 @@
+import "./App.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Footer from "./components/Footer";
+import LandingPage from "./screens/LandingPage/LandingPage";
+import LoginScreen from "./screens/LoginScreen/LoginScreen";
+import RegisterScreen from "./screens/RegisterScreen/RegisterScreen";
 
-import React, { useState } from "react";
-import Form from "./container/login/index";
-import './index.css'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "./container/dashboard";
 
 function App() {
-    return (
-        <Router>
-            <Route exact path="/"  component={Form}/>
-            <Route path="/dashboard" component={Dashboard}/>
-        </Router>
 
-    );
+  return (
+    <Router>
+      <main className="App">
+        <Route path="/" component={LandingPage} exact />
+        <Route path="/login" component={LoginScreen} />
+        <Route path="/register" component={RegisterScreen} />
+      </main>
+      <Footer />
+    </Router>
+  );
 }
 
 export default App;
