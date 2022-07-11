@@ -29,14 +29,13 @@ const authUser = asyncHandler(async (req, res) => {
 //@route           POST /api/users/
 //@access          Public
 const registerUser = asyncHandler(async (req, res) => {
-  console.log(email)
   const { name, email, password, pic } = req.body;
 
   const userExists = await User.findOne({ email });
 
   if (userExists) {
     res.status(404);
-    throw new Error("User already exists");
+    throw new Error("User already exists in db");
   }
 
   const user = await User.create({
