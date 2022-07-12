@@ -18,7 +18,7 @@ function LoginScreen({ history }) {
 
   useEffect(() => {
     if (userInfo) {
-      history.push("/mynotes");
+      history.push("/dashboard");
     }
   }, [history, userInfo]);
 

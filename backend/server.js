@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const connectDB =  require("./config/db.js");
 const path = require("path");
+const cors = require('cors');
 
 const noteRoutes =  require("./routes/noteRoutes.js");
 const userRoutes =  require("./routes/userRoutes.js");
@@ -12,6 +13,9 @@ dotenv.config();
 connectDB();
 
 const app = express(); // main thing
+app.use(cors({
+  origin: '*'
+}));
 
 app.use(express.json()); // to accept json data
 

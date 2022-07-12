@@ -11,6 +11,7 @@ import {
   USER_UPDATE_SUCCESS,
 } from "./../constants/userConstants";
 import axios from "axios";
+import { baseUrl } from "../utility";
 
 export const login = (email, password) => async (dispatch) => {
   try {
@@ -23,7 +24,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "/api/users/login",
+      `${baseUrl()}api/users/login`,
       { email, password },
       config
     );
@@ -56,9 +57,8 @@ export const register = (name, email, password, pic) => async (dispatch) => {
         "Content-type": "application/json",
       },
     };
-
     const { data } = await axios.post(
-      "/api/users",
+      `${baseUrl()}api/users`,
       { name, pic, email, password },
       config
     );
