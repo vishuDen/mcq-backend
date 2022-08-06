@@ -1,2 +1,2 @@
 
-export const baseUrl = () => `http://tesst-mcq.herokuapp.com/`
+export const baseUrl = () => `https://tesst-mcq.herokuapp.com/`
